@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.tests.label }}<br>
+            {{ form.tests(class="form-control", type="select") }}<br>
+            {% for error in form.tests.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>{{ form.add_test(type="submit", class="btn btn-primary") }}</p>
+        <p>{{ form.edit_test(type="submit", class="btn btn-primary") }}</p>
+    </form>
+    <table>
+      <tr>
+        <th>Название теста</th>
+        <th>Ученик</th>
+        <th>Балл</th>
+      </tr>
+        {% for item in results["test_results"] %}
+            <tr>
+                <td>{{ item["test"]["name"] }}</td>
+                <td>{{ item["student"]["name"] }}</td>
+                <td>{{ item["score"] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

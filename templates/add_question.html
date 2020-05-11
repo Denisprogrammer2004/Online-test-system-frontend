@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+    <p>
+        {{ form.question.label }}<br>
+        {{ form.question(class="form-control") }}<br>
+        {% for error in form.question.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.score.label }}<br>
+        {{ form.score(class="form-control") }}<br>
+        {% for error in form.score.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.option1.label }}
+        {{ form.option1(class="form-control") }}
+        {% for error in form.option1.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    
+        {{ form.option1_chb.label }}
+        {{ form.option1_chb(class="form-control") }}
+        {% for error in form.option1_chb.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.option2.label }}
+        {{ form.option2(class="form-control") }}
+        {% for error in form.option2.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    
+        {{ form.option2_chb.label }}
+        {{ form.option2_chb(class="form-control") }}
+        {% for error in form.option2_chb.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.option3.label }}
+        {{ form.option3(class="form-control") }}
+        {% for error in form.option3.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    
+        {{ form.option3_chb.label }}
+        {{ form.option3_chb(class="form-control") }}
+        {% for error in form.option3_chb.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.option4.label }}
+        {{ form.option4(class="form-control") }}
+        {% for error in form.option4.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    
+        {{ form.option4_chb.label }}
+        {{ form.option4_chb(class="form-control") }}
+        {% for error in form.option4_chb.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.option5.label }}
+        {{ form.option5(class="form-control") }}
+        {% for error in form.option5.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    
+        {{ form.option5_chb.label }}
+        {{ form.option5_chb(class="form-control") }}
+        {% for error in form.option5_chb.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>{{ form.add_quest(type="submit", class="btn btn-primary") }}</p>
+    <p>{{ form.complete_quest(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+</form>
+{% endblock %}
